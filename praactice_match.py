@@ -1,22 +1,54 @@
-class LinkedList:
+class Node:
     def __init__(self,data):
         self.data = data
         self.next = None
-class Node:
+
+class LinkedList:
     def __init__(self):
         self.head = None
-    def insertAtBeginning(self,data):
-        new_node = LinkedList(data)
-        new_node.next = self.head
+    def insertAtbeginning(self,data):
+        new_node = Node(data)
+        new_node.next= self.head
         self.head = new_node
-    def print_list(self):
+
+    def insertAtEnd(self,data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
         temp = self.head
-        while temp is not None:
-            print(temp.data, end=" ")
+        while temp.next is not None:
             temp = temp.next
-ll = Node()
-ll.insertAtBeginning(10)
-ll.insertAtBeginning(20)
-ll.insertAtBeginning(30)
-ll.insertAtBeginning(40)
-ll.print_list()
+        temp.next = new_node
+
+    def printList(self):
+        temp = self.head 
+        while temp is not None:
+            print(temp.data , end= " ")
+            temp = temp.next
+
+ll = LinkedList()
+ll.insertAtbeginning(9)
+ll.insertAtbeginning(8)
+ll.insertAtbeginning(5)
+ll.insertAtbeginning(3)
+ll.printList()
+print("\n insert at the end now")
+ll.insertAtEnd(4)
+ll.printList()
+
+      
+
+
+
+
+
+
+
+
+#3->5->8->9
+        
+        #3->5->8->9->4
+
+        #3 = self.head
+        

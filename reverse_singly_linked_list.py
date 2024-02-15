@@ -14,6 +14,7 @@ class ReverseLinkedList:
             current.next = prev
             prev = current
             current = next
+        self.head = prev
 
 
     def push(self, new_data):
@@ -34,6 +35,9 @@ llist.push(15)
 llist.push(85)
 
 print("Given Linked List")
+llist.printList()
+llist.reverseList()
+print("\nReversed Linked List")
 llist.printList()
 
 # 1,5,6,8
